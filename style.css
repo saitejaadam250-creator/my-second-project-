@@ -1,0 +1,217 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #080808;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  color: #e9c66d;
+  animation: twinkle 2s infinite alternate;
+}
+
+.page {
+  display: none;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 30px 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.page.active {
+  display: flex;
+  animation: appear 0.8s ease;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  padding: 42px 25px;
+  text-align: center;
+  border: 1px solid #b89443;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #17130b, #080808 65%);
+  box-shadow: 0 0 35px #b8944320;
+}
+
+.crown {
+  font-size: 55px;
+  color: #e8c56a;
+  margin-bottom: 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #d4b35e;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: clamp(38px, 9vw, 68px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+h1 span {
+  color: #e8c56a;
+  text-shadow: 0 0 20px #d9ad4940;
+}
+
+h2 {
+  color: #f5df9a;
+  font-size: 21px;
+  letter-spacing: 3px;
+  margin: 16px 0;
+}
+
+.gold-line {
+  width: 100px;
+  height: 2px;
+  background: #e8c56a;
+  margin: 24px auto;
+  box-shadow: 0 0 12px #e8c56a;
+}
+
+.date {
+  color: #e8c56a;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin: 25px 0;
+}
+
+.intro, .message {
+  color: #d8d2c3;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 25px auto 0;
+  padding: 16px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(100deg, #b28a32, #ffe7a0, #c49a3a);
+  color: #100d06;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px #e8c56a70;
+}
+
+.small {
+  margin-top: 28px;
+  color: #968a6d;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.second-card {
+  max-width: 650px;
+}
+
+.cake {
+  font-size: 80px;
+  margin: 15px 0;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.message {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.final-wish {
+  color: #e8c56a;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 25px;
+}
+
+button.secondary {
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid #b89443;
+  color: #e8c56a;
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  z-index: 10;
+  pointer-events: none;
+  animation: fall 3.5s linear forwards;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 35px 20px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+}
